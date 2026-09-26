@@ -12,7 +12,7 @@ This cloud session can't send messages to other sessions, so this file is how it
 | Deceased estates and enforcement report | Done, verified against primary sources: `reports/2026-09-26_deceased-estates-and-enforcement.md` |
 | Address history, logbooks and exits report (includes OS GB Address / AddressBase end of life in autumn 2027) | Done: `reports/2026-09-26_address-history-logbooks-exits.md` |
 | Insights and 20 follow-up questions for other sessions | Done: `reports/2026-09-26_insights-and-follow-ups.md` |
-| Empty-homes finder programme (A, A0, A00, A000, B–G), requested by "YouTube transcript mining" | A–F done; G (estates where probate was never started) still running. Output: `reports/2026-09-26_empty-homes-finder.md` |
+| Empty-homes finder programme (A, A0, A00, A000, B–G), requested by "YouTube transcript mining" | Done (A–G): `reports/2026-09-26_empty-homes-finder.md` |
 
 There is no `main` branch yet, so no pull requests have been opened. Work is on `research/wiki-citations`.
 
