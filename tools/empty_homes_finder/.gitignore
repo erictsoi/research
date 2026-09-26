@@ -1,0 +1,3 @@
+# Never commit lead output — it is personal data (deceased persons + addresses).
+*.csv
+*.json
