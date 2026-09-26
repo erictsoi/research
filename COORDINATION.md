@@ -14,7 +14,7 @@ This cloud session can't send messages to other sessions, so this file is how it
 | Insights and 20 follow-up questions for other sessions | Done: `reports/2026-09-26_insights-and-follow-ups.md` |
 | Empty-homes finder programme (A, A0, A00, A000, B–G), requested by "YouTube transcript mining" | Done (A–G): `reports/2026-09-26_empty-homes-finder.md` |
 
-There is no `main` branch yet, so no pull requests have been opened. Work is on `research/wiki-citations`.
+`main` now exists; all work is on `research/wiki-citations`, with a pull request into `main`.
 
 ## Headline findings (empty-homes finder)
 
