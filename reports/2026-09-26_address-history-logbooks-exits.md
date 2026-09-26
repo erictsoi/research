@@ -185,6 +185,47 @@ Source: VOA *Council Tax: challenges and changes, March 2024* (published 29 Augu
 - **AddressBase Core** was released in July 2020 (OS AddressBase Product Overview v3.2). **[verified: primary — OS document hosted by a reseller]**
 - **2014 pricing:** £189,370 a year for national, full-specification AddressBase (101+ terminals). GeoPlace net revenue was £9.5m in 2011/12 (BIS 2014). **[verified: primary]**
 - **End of life:** "AddressBase and AddressBase Plus will reach their end of life in **Autumn 2027**". They are replaced by **OS GB Address** ("updated daily") and OS Islands Address. https://www.ordnancesurvey.co.uk/products/addressbase **[verified: primary]**
+  - AddressBase Premium and AddressBase Core are still listed as "In-life" products, with no end date given. **[verified: primary]**
+
+#### 2.4a What AddressBase is, and what replaces it (OS GB Address)
+
+**In plain terms.** AddressBase is Ordnance Survey's licensed national address file. Every UPRN comes with its full address text, coordinates and a classification (house, flat, shop and so on). Its sources are the council gazetteers (via GeoPlace), OS mapping and Royal Mail's PAF. The free OS Open UPRN (2.6) gives only the number and coordinates. **[inferred from the sources in 2.4–2.6]**
+
+**The replacement.** OS GB Address is "A complete and authoritative addressing dataset for Great Britain, providing a detailed view of an address and its lifecycle, based on pre-build, built, and historical property lifecycle phases. This product is updated daily". It is "generated from the National Geographic Database" (NGD). https://www.ordnancesurvey.co.uk/products/os-gb-address **[verified: primary]**
+- The NGD Address theme "contains all of the address data found in the OS AddressBase Premium product". https://docs.os.uk/osngd/data-structure/address **[verified: primary]**
+- Northern Ireland, the Isle of Man and the Channel Islands are covered by a sister product, OS Islands Address. **[verified: primary]**
+
+**What it contains** (OS NGD documentation; https://docs.os.uk/osngd/data-structure/address/gb-address/built-address) **[verified: primary]**
+- **Six feature types:** Built Address, Pre-Build Address, Historic Address, Non-Addressable Object, Street Address and Royal Mail Address. Each is a separate table, so planned, live and demolished addresses are distinguished.
+- **Built Address** is defined as "local authority addresses that are currently built and live and can typically receive mail, deliveries, or services".
+  - Schema v1.0 launched 2 November 2022, v2.0 on 28 March 2023 and v3.0 on 30 September 2025.
+- **Built Address attributes include:**
+  - `uprn`, `parentuprn`, `rootuprn` and `hierarchylevel` (so flats link to their building);
+  - `usrn` (the street);
+  - `fulladdress`, plus Welsh and Gaelic alternate-language versions;
+  - `floorlevel`, `lowestfloorlevel` and `highestfloorlevel`;
+  - a four-level classification (`primary` to `quaternaryclassificationdescription`);
+  - `buildstatus`, `buildstatusdate` and `addressstatus`;
+  - `lowertierlocalauthoritygsscode`;
+  - `positionalaccuracy`, `effectivestartdate` and `effectiveenddate`.
+- **Versioning:** each feature carries its own version dates, and past snapshots can be requested ("temporal filtering").
+- **Royal Mail Address** holds PAF delivery points (`udprn`) matched to UPRNs.
+  - It records match type, match method and "unmatched reason".
+  - Schema v2.0, due "early October 2026", adds "Full NYB content" (Not Yet Built) and "Full MR content" (Multiple Residence). https://docs.os.uk/osngd/data-structure/address/gb-address/royal-mail-address
+- **Cross-references:** the Related Entity component "provides cross-reference information to key identifiers from other datasets, allowing for the UPRN … to be linked to them". https://docs.os.uk/osngd/data-structure/address/address-related-components/related-entity
+  - Its code list (v2.0, 30 September 2025) includes **"VOA Council Tax — Valuation Office Agency (VOA) Council Tax Assessment Unique Address Reference Number (UARN)"** and **"VOA Non Domestic Rates"**.
+  - It also links OS Building Part, Land, Road Link, Ward and Parish features. https://docs.os.uk/osngd/code-lists/code-lists-overview/dataentitycatalogue
+  - So a licensed user can join a UPRN to the VOA's council tax record reference. **The band itself is not supplied** (no band attribute appears in the schemas read). **[verified: primary; absence of a band field checked in the Built Address schema]**
+- **Formats and access:** CSV or GeoPackage, downloaded from the OS Data Hub through OS Select+Build. It is not offered through the Features or Tiles APIs. **[verified: primary]**
+
+**What is better than AddressBase / AddressBase Plus** **[inferred from the above]**
+1. Updates are daily rather than periodic epochs.
+2. The lifecycle is explicit: pre-build, live and historic addresses are held separately, with dates.
+3. Floor levels and a parent/root UPRN hierarchy for flats and multi-occupancy buildings.
+4. Links to OS buildings, land use and VOA UARNs in one linked database.
+5. PAF matching is transparent, including why a delivery point did not match.
+
+**Unchanged:** it is still a **licensed** product, and the address text still carries Royal Mail PAF terms. No OS GB Address prices were found on OS pages. Access for public-sector bodies under the PSGA is **[inferred]**, not confirmed on the product page.
 
 ### 2.5 Licensing history
 
@@ -567,6 +608,7 @@ Source: VOA *Council Tax: challenges and changes, March 2024* (published 29 Augu
   - GeoPlace (LGA and OS, 2010–11) and AddressBase (2011) followed.
   - Identifiers only became free (OGL) on 1 July 2020, and only as numbers and coordinates.
 - **Address text is still paid for.** It sits in AddressBase and Royal Mail's PAF. The PAF stayed with Royal Mail at privatisation and is now owned via EP Group. Government pays £30.8m for 2023–28 so the public sector can use it free, and commercial prices rise on 1 October 2026.
+- **The flagship address product is being replaced.** AddressBase and AddressBase Plus reach end of life in autumn 2027. Their successor, OS GB Address, is updated daily, tracks each address through its lifecycle, and cross-references UPRNs to VOA council tax UARNs, but not to bands. It remains a paid licence.
 - **UPRN coverage in public data is patchy.**
   - Energy performance certificates have UPRNs since November 2021.
   - Land Registry price-paid data gained a UPRN lookup only on 28 August 2026, for new records.
