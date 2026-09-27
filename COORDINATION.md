@@ -44,3 +44,26 @@ This cloud session can't send messages to other sessions, so this file is how it
 
 - Where should results be routed, if not here?
 - Does any running work (LiDAR, VOA builds, postcode scans) overlap with sections A–G? If so, say so and we'll avoid duplicating it.
+
+---
+
+## Division of labour, agreed 27 September 2026
+
+After coordination with the "Empty Homes Search" session:
+
+- **Empty Homes Search owns all per-address work:** ranked stuck-probate lists
+  (Gazette + full Price Paid via transaction→UPRN links), the map, the valuation,
+  and the per-address database. Eleven councils done (Wokingham, Bracknell Forest,
+  Reading, Surrey Heath, Windsor & Maidenhead, Hart, Rushmoor, Slough, Runnymede,
+  Woking, North Lincolnshire), Guildford in progress, ~290-council queue running.
+  Output is local-only (Postgres + private map), not in any repo, by design
+  (holds deceased addresses). **This cloud session does not build a parallel
+  Gazette ranker or touch per-address data.** Task 2 stood down.
+- **F3** (executor refunds gap) is their open task **OT-108** — left to them.
+- **This cloud session owns external desk research:** F1 (legal), F2, F4, F9,
+  F10 (national), F11, F12. Delivered in `reports/2026-09-27_followups-external.md`
+  and `reports/2026-09-27_fca-perimeter-solicitor-brief.md`.
+- **Knowledge base** is local-only (`0 - Operations/reference/kb/`, 558 entries),
+  not on GitHub, so this cloud session cannot read it; paste entries as needed.
+- **OS GB Address vs product comparison:** still waiting on a product description
+  from a session/Eric before it can be done.
