@@ -121,6 +121,19 @@ Verified against the *live* API (not just docs). Full note:
 - **So:** if the local test (2012 known-empties vs neighbour report-density) passes on a
   high-volume area, build the client once, locally. Endpoint + method are proven free.
 
+**Brief 3 delivered (cloud session):** eight external questions answered in
+`reports/2026-09-27_brief3-external.md` — (1) buying bona vacantia homes from GLD via the
+free BVC2 referral + company-restoration route; (2) VAT 5%/0% empty-home evidence (EPO
+letter is decisive); (3) 2025/26 Band D + LTE/second-home premiums for all 13 boroughs;
+(4) ONS deaths-by-LA 2023–25 for the 13; (5) EPC register **moved** — old service dies
+~30 May 2026, migrate to get-energy-performance-data.communities.gov.uk (One Login bearer
+token); (6) GDPR/PECR/SRA groundwork on contacting a named executor (route via the firm,
+not the family); (7) buyer-renovator finance only in Bracknell Forest/Woking/Guildford;
+(8) CPO/EDMO. **CPO note:** the earlier "~182 empty-house CPOs since 2019" is a *derived
+filter* of the real gov.uk "Compulsory purchase orders: register of decisions" (all CPO
+types, SoS-decided only) — not wrong, just clarified; also pull live CPOs from The Gazette
+via `noticetypes=1601` + text filter. Legal items are adviser groundwork, not opinions.
+
 **Gazette coverage measured (Empty Homes Search, counted today).** The Gazette
 deceased-estates feed catches **~7% of all E&W deaths** — 38,000 (2023), 40,600 (2024),
 39,100 (2025) notices against ~580,000 deaths/yr (ONS). The notice is optional (creditor
