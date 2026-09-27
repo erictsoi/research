@@ -121,6 +121,31 @@ Verified against the *live* API (not just docs). Full note:
 - **So:** if the local test (2012 known-empties vs neighbour report-density) passes on a
   high-volume area, build the client once, locally. Endpoint + method are proven free.
 
+**Gazette coverage measured (Empty Homes Search, counted today).** The Gazette
+deceased-estates feed catches **~7% of all E&W deaths** — 38,000 (2023), 40,600 (2024),
+39,100 (2025) notices against ~580,000 deaths/yr (ONS). The notice is optional (creditor
+protection under Trustee Act 1925 s.27), so it's mostly solicitor-run estates: 5,464 of
+~7,500 sampled notices name a firm (~73%, consistent with the F2 finding). It structurally
+misses: first-of-a-couple deaths (house passes by survivorship, no probate/notice),
+renters/council tenants (no house), small/family-handled estates, and un-administered
+"probate never started" estates.
+- **Denominator caveat (this cloud session):** "1 in 14 deaths" understates coverage of
+  the *target*. Most deaths can't empty an owner-occupied home. Against the ~204k
+  owner-occupier homes emptied by a death per year (F11 central), 39,100 notices ≈ **~19%
+  (1 in 5)**; against 295,418 grants of representation (2025), ≈ **~13% (1 in 8)**. So the
+  Gazette catches ~1 in 5 of the real target, and the misses concentrate in non-targets
+  (renters, surviving spouses, care) — the caught estates are disproportionately the
+  professionally-run, house-holding ones where a stuck sale shows up.
+- **Both-gone timing:** for a jointly-owned couple, probate usually isn't needed on the
+  *first* death (survivorship), so the notice legitimately lands on the *second* death —
+  i.e. when the house actually empties. A single notice on a both-gone home is usually
+  timed right, not a miss.
+- **Widening coverage:** there is no free way to widen the *death* net (registrations not
+  public by address; modern probate search shows no address; CCOD/OCOD company-only). Widen
+  instead via the other free entry points — public-health funerals, s.215/CPO registers,
+  the disclaimer feed (below), FixMyStreet corroboration — which catch empties the Gazette
+  can't see.
+
 **Gazette disclaimer notices — worth adding to the finder's source list.** When a
 dissolved company owned a house, the property vests in the Crown as bona vacantia; if
 the Crown disclaims it, the disclaimer notice **names the property**. This confirms
