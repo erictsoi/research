@@ -121,6 +121,20 @@ Verified against the *live* API (not just docs). Full note:
 - **So:** if the local test (2012 known-empties vs neighbour report-density) passes on a
   high-volume area, build the client once, locally. Endpoint + method are proven free.
 
+**Brief 4 delivered (cloud session):** national incentive-stacking, in
+`reports/2026-09-27_brief4-national-incentives.md`. Key results: (§A) **per-council empty +
+second-home premium adoption is available nationally** from the MHCLG **Council Taxbase 2025**
+"Empty Properties Data" workbook (291/296 charge the empty premium, 211/296 second homes) —
+but the 1yr-vs-2yr *trigger* can't be read for ~34% who fold 1–2yr into 2–5yr; (§B) most
+council empty-homes **loans run through 3 CICs** — Lendology (20 councils, OPEN), Parity Trust
+(16, OPEN), FHIL (**winding down/closed**) — and **all are owner-improvement, none finances the
+purchase**; (§C) the buyer/investor-friendly money is Kent No Use Empty, Wales Houses into
+Homes, Derby, Burnley + some NW/E-Mids loans; string-heavy grants (Liverpool, Welsh grant, etc.)
+rule out flips; (§F) 12-month major-repairs premium exception, derelict-shell SDLT (Bewley/Mudan),
+Matchmaker (Knowsley/Bury); (§G) 20-council stacking shortlist. **Corrects Brief 3:**
+Bracknell/Woking/Guildford buyer-finance was overstated (FHIL closing; Woking/Guildford = Parity
+owner-improvement). Overlay the lane's own resale values before ranking.
+
 **Brief 3 delivered (cloud session):** eight external questions answered in
 `reports/2026-09-27_brief3-external.md` — (1) buying bona vacantia homes from GLD via the
 free BVC2 referral + company-restoration route; (2) VAT 5%/0% empty-home evidence (EPO
