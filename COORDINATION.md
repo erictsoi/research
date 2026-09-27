@@ -96,12 +96,30 @@ touch per-address title data.
 
 **Auction catalogues — parked** (unconfirmed lead + would require scraping).
 
-**FixMyStreet — research only, do NOT build a client yet (option b).** Their finder has
-no FixMyStreet lane; the go/no-go test (do 2012 known-empties have more nearby FMS
-reports in 2010–13 than neighbours?) needs the local 2012 empties list and stays local.
-This cloud session is researching only: (1) which councils' reports are fetchable free
-via the Open311 API, (2) how far back the data goes, (3) which report categories exist.
-If the test passes, the client is built once, locally. [research in progress]
+**FixMyStreet — research done; the 2010–13 test IS feasible on free, no-scrape data.**
+Verified against the *live* API (not just docs). Full note:
+`scratchpad/notes/fixmystreet_open311_research.md`.
+- **One national endpoint covers all GB councils** — no per-council list needed:
+  `https://www.fixmystreet.com/open311/v2/requests.json?jurisdiction_id=fixmystreet`
+  (`services.json` for categories). No API key for reads.
+- **Historical depth (the make-or-break): cleared.** The generic Open311 "90-day cap"
+  is documented but **not enforced** on this endpoint — a full-year 2012 span was
+  accepted, and 2010 and 2012 reports came back live. The only real limit is **1000
+  records/query, newest-first**, so page with rolling `start_date`/`end_date` windows.
+  No HTML scraping at any step. mySociety retains *all* reports (FAQ) and they've been
+  used in academic research before.
+- **Categories** vary per council (2,572 today). Relevant strings: "Grass - Overgrown",
+  "Abandoned Vehicle(s)", "Fly tipping", "Graffiti…", "Building Damage", and notably
+  **"Estate Agent board…"**. No dedicated "empty/derelict building" national category —
+  dereliction shows up indirectly. **2010–13 used simpler codes**, so classify on the
+  strings in the *returned historical records*, not today's list.
+- **Two cautions before building:** (1) **statistical power** — low-activity councils are
+  too sparse (North Lincs had only 53 reports in all of 2012); run the test on a
+  high-volume area (London boroughs / Oxfordshire / Bristol all appeared in 2010–13
+  results). (2) **licensing** — report-data reuse has no stated open licence (software is
+  AGPL); confirm reuse terms with mySociety before *publishing* anything derived from it.
+- **So:** if the local test (2012 known-empties vs neighbour report-density) passes on a
+  high-volume area, build the client once, locally. Endpoint + method are proven free.
 
 **Gazette disclaimer notices — worth adding to the finder's source list.** When a
 dissolved company owned a house, the property vests in the Crown as bona vacantia; if
