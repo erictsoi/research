@@ -121,6 +121,18 @@ Verified against the *live* API (not just docs). Full note:
 - **So:** if the local test (2012 known-empties vs neighbour report-density) passes on a
   high-volume area, build the client once, locally. Endpoint + method are proven free.
 
+**Premium-pressure scores — every English council (cloud session).** Built directly from the
+MHCLG Council Taxbase 2025 workbook + Council Tax levels Table 9 (area Band D). Output:
+`data/premium_pressure_2025.csv` (296 rows) + `reports/2026-09-27_premium-pressure-scores.md`.
+Per council: empty + second-home premium adoption, inferred **trigger** (170 confirmed 1yr / 25
+confirmed 2yr / 96 unknown-fold-in), dwelling counts by tier, statutory premium £ at each tier,
+and a 0–100 **bite_score** (motivated-seller pressure = Band D £ size + trigger earliness + long-
+empty stock). Two lenses: bite (per-home) vs supply (Birmingham 5,193 / Leeds 2,875 premium
+dwellings). Sweet spot (high bite × high supply): Liverpool, North Yorkshire, Cornwall, Sheffield,
+Bradford, Sefton, Cumberland, Birmingham. £ columns assume statutory rates (CTB rate-split cols
+unpopulated); overlay the lane's resale medians before ranking. Note: let-to-council grants are a
+valid hold-and-let exit, not a killed deal.
+
 **Brief 4 delivered (cloud session):** national incentive-stacking, in
 `reports/2026-09-27_brief4-national-incentives.md`. Key results: (§A) **per-council empty +
 second-home premium adoption is available nationally** from the MHCLG **Council Taxbase 2025**
