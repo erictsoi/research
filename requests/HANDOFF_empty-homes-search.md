@@ -12,6 +12,7 @@ This is an index + the decisions/corrections that matter. Open the named files f
 | `data/premium_pressure_2025.csv` | **All 296 English councils scored** for empty-homes premium pressure: adoption, inferred trigger (1yr/2yr/unknown), per-tier dwelling counts, statutory premium £ at each tier, second-home premium, 0–100 bite score. From MHCLG Council Taxbase 2025 + Band D. |
 | `reports/2026-09-27_premium-pressure-scores.md` | The scoring method, top councils, bite-vs-supply lenses, the 13 boroughs scored, caveats. |
 | `reports/2026-09-27_brief4-national-incentives.md` | National incentive stacking: premium data source, regional loan CICs, buyer-friendly finance, other stacking levers, 20-council shortlist. |
+| `reports/2026-09-27_gap-resolutions.md` | Latest: 16 priority councils confirmed 1yr-trigger + the six dead-ends resolved (see §4). |
 | `reports/2026-09-27_brief3-external.md` | Bona vacantia (BVC2) purchase route, empty-home VAT evidence, council-tax premiums/Band D (13), ONS deaths-by-LA (13), EPC data migration, executor-contact law, empty-homes finance, CPO/EDMO. |
 | `reports/2026-09-27_followups-external.md` + `reports/2026-09-27_fca-perimeter-solicitor-brief.md` | Earlier follow-ups (F1/F2/F4/F9/F10/F11/F12) + the FCA-perimeter solicitor brief. |
 | `reports/2026-09-26_*` | The three foundation reports (deceased estates & enforcement; address history/logbooks/exits; empty-homes finder programme A–G; insights & follow-ups). |
@@ -38,7 +39,8 @@ This is an index + the decisions/corrections that matter. Open the named files f
 
 ## 4. Open items + the way to close them
 
-- **96 councils have an unknown 1yr-vs-2yr premium trigger** (they fold 1–2yr into 2–5yr in the CTB return). The prompt pack (`requests/perplexity_council_premium_prompts.md`) closes them from council-own pages. **Status: the cloud session is now running the top-17 priority batch + the six non-council dead-ends (VAT tribunal case law, ICO enforcement, bona vacantia auction lots, LAHF per-council, FixMyStreet licence, Missing Out 2026) via its own web search — results will be folded into the scored CSV and this handoff updated.** (Perplexity credits exhausted, so cloud session is doing it directly; the bot-gated councils may stay `unclear`.)
+- **Unknown 1yr-vs-2yr premium trigger — now 80 left (was 96).** The cloud session resolved the **top-17 priority batch (16 confirmed 1yr from council-own pages; Gateshead still `unclear`, likely 2yr)** and the **six non-council dead-ends** via its own web search (Perplexity credits were exhausted). All folded in: see **`reports/2026-09-27_gap-resolutions.md`**, and `data/premium_pressure_2025.csv` is updated (trigger counts now 186 1yr / 80 unknown / 25 2yr / 5 none; Rutland now scores 100). The remaining 80 run the same way from `requests/perplexity_council_premium_prompts.md`.
+- **Dead-ends resolved** (in the gap-resolutions report): bona vacantia auctions sell via Allsop under the "Solicitor for HM Treasury" seller name; VAT evidence case *G S Bhachu*; ICO nearest analogue is *Experian* (nothing specific to Gazette-notice reuse); LAHF has no consolidated per-council table; **FixMyStreet report data has no open licence — bespoke/by-arrangement with mySociety (matters before publishing the 2010–13 test)**; Policy in Practice "Missing Out" latest is 2025, no 2026 edition yet.
 - **Legal items (VAT buyer-can-get-EPO-letter; executor-outreach lawfulness)** need a solicitor's sign-off — desk research has taken them as far as it can.
 
 ## 5. Corrections log (things earlier notes got wrong)
