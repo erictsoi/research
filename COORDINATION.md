@@ -159,3 +159,17 @@ homes on the *company-limbo* list, free.
 - Scope note: this is *dissolved-company* onerous property, **not** deceased-estate BV
   houses (those are sold at auction, not disclaimed). A separate liquidator's disclaimer
   under Insolvency Act 1986 s.178 exists for property given up during a live liquidation.
+- **Verified live 27 Sep (refines the above):**
+  - Feed works; **23,783** notices under code 2603 total (10/page, ~2,379 pages). Each
+    Atom entry has title, notice link, dates, coordinates, and truncated content.
+  - The content **does name the property address** (confirmed on a real notice) — but the
+    **Land Registry title number is NOT guaranteed** (the sample notice had none). So the
+    join to the company-limbo list should be on **dissolved-company name** (which that list
+    already has) → then read the address → keep the residential ones. Don't rely on a title
+    number being present.
+  - **2603 is a broad, commercial-heavy net** and mixes jurisdictions: it includes both the
+    English Treasury Solicitor (BVD) *and* the Scottish King's & Lord Treasurer's Remembrancer
+    (KLTR), and many notices are commercial **leasehold** interests (e.g. a disclaimed
+    Holiday Inn Express lease), not residential freeholds. Filter to residential + relevant
+    jurisdiction after matching. Value is as a **confirmation signal** on company-owned homes
+    already on the limbo list, not a primary house-finder.
