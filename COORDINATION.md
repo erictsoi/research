@@ -67,3 +67,52 @@ After coordination with the "Empty Homes Search" session:
   not on GitHub, so this cloud session cannot read it; paste entries as needed.
 - **OS GB Address vs product comparison:** still waiting on a product description
   from a session/Eric before it can be done.
+
+---
+
+## Decisions and hand-offs, 27 September 2026 (later)
+
+Settled between Eric, the Empty Homes Search session, and this cloud session.
+
+**Care homes / Class E (recorded as an insight).** When an owner moves into care and
+keeps the house, the death notice usually carries the *care home's* address; the house
+returns via the "formerly of" line. The map v30 fix (commit `b4478462`) removes the
+care home itself (CQC register match; numbered street addresses now need an exact
+property-reference match to avoid catching ordinary houses that share a word with a
+care-home name). Off the lists: Summerfield (Kidmore Road — was on the both-gone stuck
+list), Bickerton House, Downshire House, Firfield House, Rivermede Court. **Insight:**
+such a house is often empty since the *move into care* (Class E council-tax exemption),
+not just since death — so "empty duration" for these can predate the death notice.
+Gap: notices that give only the care home and never name the house leave it invisible.
+
+**Title checks — Empty Homes Search owns; payment is Eric's.** Batch is **15 stuck
+both-gone homes ≈ £105** (£7/title; no £3 option post-Dec-2024). List written locally to
+`10 - empties/training/title_check_batch_2026-09-27.csv` (not committed — holds
+addresses). Eric buys the **full register** on gov.uk "Search the register"; drops
+owner/registration-date/price back for reading. Rule: read the stuck-vs-inherited hit
+rate first (child + recent date + no price = inherited; deceased/executor/old date =
+stuck), *then* decide if routine paid checks are worth it. This cloud session does not
+touch per-address title data.
+
+**Auction catalogues — parked** (unconfirmed lead + would require scraping).
+
+**FixMyStreet — research only, do NOT build a client yet (option b).** Their finder has
+no FixMyStreet lane; the go/no-go test (do 2012 known-empties have more nearby FMS
+reports in 2010–13 than neighbours?) needs the local 2012 empties list and stays local.
+This cloud session is researching only: (1) which councils' reports are fetchable free
+via the Open311 API, (2) how far back the data goes, (3) which report categories exist.
+If the test passes, the client is built once, locally. [research in progress]
+
+**Gazette disclaimer notices — worth adding to the finder's source list.** When a
+dissolved company owned a house, the property vests in the Crown as bona vacantia; if
+the Crown disclaims it, the disclaimer notice **names the property**. This confirms
+homes on the *company-limbo* list, free.
+- **Notice-type code 2603** — "Notice of disclaimer", Companies Act 2006 **s.1013**
+  (Crown/Treasury Solicitor disclaimer of property vesting as bona vacantia on
+  company dissolution).
+- Feed (Atom): `https://www.thegazette.co.uk/all-notices/notice/data.feed?noticetypes=2603`
+  (or `...?text=disclaimer` as a looser fallback). Same feed mechanics as the
+  deceased-estates feed (code 2903) the finder already uses.
+- Scope note: this is *dissolved-company* onerous property, **not** deceased-estate BV
+  houses (those are sold at auction, not disclaimed). A separate liquidator's disclaimer
+  under Insolvency Act 1986 s.178 exists for property given up during a live liquidation.
